@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs">
+  <meta property="og:title" content="Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs" />
+  <meta property="og:description" content="Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs" />
+  <meta property="og:url" content="https://btsmart.github.io/splatt3r/index.html" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/overview.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs">
+  <meta name="twitter:description" content="Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/image/overview.svg">
+  <meta name="twitter:card" content="static/image/overview.svg">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="3D Gaussian Splatting, Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script
+    type="module"
+    src="https://gradio.s3-us-west-2.amazonaws.com/4.38.1/gradio.js"
+  ></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image
+              Pairs</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=k_jn6-EAAAAJ" target="_blank">Brandon Smart</a>&thinsp;<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=mvpE6bIAAAAJ" target="_blank">Chuanxia Zheng</a>&thinsp;<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=n9nXAPcAAAAJ" target="_blank">Iro Laina</a>&thinsp;<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=GmWA-LoAAAAJ" target="_blank">Victor Adrian Prisacariu</a>&thinsp;<sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>&thinsp;Active Vision Lab, <sup>2</sup>&thinsp;Visual Geometry Group<br>University of Oxford</span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Hugging Face Demo -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/spaces/brandonsmart/splatt3r" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-cog"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/btsmart/splatt3r" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/splatt3r_teaser.mp4"
+          type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          We introduce Splatt3R, a feed-forward model that can directly predict a 3D Gaussian Splat from a stereo pair of input images with unknown camera parameters.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-the-wild 3D reconstruction and novel view synthesis from stereo pairs. Given uncalibrated natural images, Splatt3R can predict 3D Gaussian Splats without requiring any camera parameters, or depth information. For generalizability, we start from a 'foundation' 3D geometry reconstruction method, MASt3R, and extend it to a full 3D structure and appearance reconstruction. Specifically, unlike the original MASt3R which reconstructs only 3D point clouds, we predict the additional Gaussian attributes required to construct a Gaussian primitive for each point. Hence, unlike other novel view synthesis methods, Splatt3R is first trained by optimizing the 3D point cloud's geometry loss and then the novel view synthesis objective. By doing this, we avoid the local minima present in training 3D Gaussian Splats from stereo views. We also propose a novel loss masking strategy that we empirically find is critical for strong performance on extrapolated viewpoints. We train Splatt3R on the ScanNet++ dataset and demonstrate excellent generalisation to uncalibrated, in-the-wild images. Splatt3R can reconstruct scenes at 4FPS at 512 x 512 resolution, and the resultant splats can be rendered in real-time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Method -->
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero methodteaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/methodology.svg" alt="Our methodology" />
+      </div>
+    </div>
+  </section>
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              Following the spirit of MASt3R, we show that a simple modification to their architecture, alongside a well-chosen training loss, is sufficient to achieve strong novel view synthesis results. We encode each image simultaneously using a vision transformer encoder, then pass them to a transformer decoder which performs cross-attention between each image.
+              Normally, MASt3R has two prediction heads, one that predicts pixel-aligned 3D points and confidences, and a second which is used for feature matching. We introduce a third head to predict covariances (parameterized by rotation quaternions and scales), spherical harmonics, opacities and mean offsets for each point. This allows us to construct a complete Gaussian primitive for each pixel, which we can then render for novel view synthesis. During training, we only train the Gaussian prediction head, relying on a pre-trained MASt3R model for the other parameters.
+            </p>
+            <p> 
+              To optimize our Gaussian parameter predictions, we supervise novel view renderings of the predicted scene. During training, each sample consists of two input 'context' images which we use to reconstruct the scene, and a number of posed 'target' images which we use to calculate rendering loss.
+              Some of these target images may contain regions of the scene that were not visible to the two context views due to being obscured, or outside of their frustums. To address this, we only supervise regions of our renderings which contain pixels that have direct correspondences to one of the pixels in the context images.
+              This allows us to supervise our renderings from viewpoints that are not necessarily an interpolation between the two input images.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Image carousel -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/scannetpp.png" alt="Examples of our method from ScanNet++" />
+            <h2 class="subtitle has-text-centered">
+              Our results when evaluated on image pairs from ScanNet++, alongside comparisons to constructed baselines.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/in_the_wild.png" alt="Examples of our method on in-the-wild data" />
+            <br>
+            <br>
+            <h2 class="subtitle has-text-centered">
+              Our results when evaluated on in-the-wild image pairs captured from a mobile phone.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/loss.png" alt="An example of our loss mask calculation process" />
+            <br>
+            <br>
+            <h2 class="subtitle has-text-centered">
+              An example of our loss mask calculation process, which we use to supervise our renderings from unseen viewpoints.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Demo -->
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Demo</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero methodteaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <gradio-app src="https://brandonsmart-splatt3r.hf.space"></gradio-app>
+      </div>
+    </div>
+  </section>
+  <!-- End demo -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <!-- You are free to borrow the of this website, we just ask that you link back to this page in the footer. -->
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
