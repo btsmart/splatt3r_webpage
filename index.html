@@ -55,27 +55,25 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image
-              Pairs</h1>
+            <h1 class="title is-1 publication-title">Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=k_jn6-EAAAAJ" target="_blank">Brandon Smart</a>&thinsp;<sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=mvpE6bIAAAAJ" target="_blank">Chuanxia Zheng</a>&thinsp;<sup>2</sup>,
+                <a href="https://chuanxiaz.com/" target="_blank">Chuanxia Zheng</a>&thinsp;<sup>2</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=n9nXAPcAAAAJ" target="_blank">Iro Laina</a>&thinsp;<sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=GmWA-LoAAAAJ" target="_blank">Victor Adrian Prisacariu</a>&thinsp;<sup>1</sup>
+                <a href="https://www.robots.ox.ac.uk/~victor/" target="_blank">Victor Adrian Prisacariu</a>&thinsp;<sup>1</sup>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>&thinsp;Active Vision Lab, <sup>2</sup>&thinsp;Visual Geometry Group<br>University of Oxford</span>
-              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
             </div>
 
             <div class="column has-text-centered">
@@ -157,7 +155,8 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-the-wild 3D reconstruction and novel view synthesis from stereo pairs. Given uncalibrated natural images, Splatt3R can predict 3D Gaussian Splats without requiring any camera parameters, or depth information. For generalizability, we start from a 'foundation' 3D geometry reconstruction method, MASt3R, and extend it to a full 3D structure and appearance reconstruction. Specifically, unlike the original MASt3R which reconstructs only 3D point clouds, we predict the additional Gaussian attributes required to construct a Gaussian primitive for each point. Hence, unlike other novel view synthesis methods, Splatt3R is first trained by optimizing the 3D point cloud's geometry loss and then the novel view synthesis objective. By doing this, we avoid the local minima present in training 3D Gaussian Splats from stereo views. We also propose a novel loss masking strategy that we empirically find is critical for strong performance on extrapolated viewpoints. We train Splatt3R on the ScanNet++ dataset and demonstrate excellent generalisation to uncalibrated, in-the-wild images. Splatt3R can reconstruct scenes at 4FPS at 512 x 512 resolution, and the resultant splats can be rendered in real-time.
+              In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-the-wild 3D reconstruction and novel view synthesis from stereo pairs. Given uncalibrated natural images, Splatt3R can predict 3D Gaussian Splats without requiring any camera parameters, or depth information. For generalizability, we build Splatt3R upon a ``foundation'' 3D geometry reconstruction method, MASt3R,
+              by extending it to deal with both 3D structure and appearance. Specifically, unlike the original MASt3R which reconstructs only 3D point clouds, we predict the additional Gaussian attributes required to construct a Gaussian primitive for each point. Hence, unlike other novel view synthesis methods, Splatt3R is first trained by optimizing the 3D point cloud's geometry loss and then the novel view synthesis objective. By doing this, we avoid the local minima present in training 3D Gaussian Splats from stereo views. We also propose a novel loss masking strategy that we empirically find is critical for strong performance on extrapolated viewpoints. We train Splatt3R on the ScanNet++ dataset and demonstrate excellent generalisation to uncalibrated, in-the-wild images. Splatt3R can reconstruct scenes at 4FPS at 512 x 512 resolution, and the resultant splats can be rendered in real-time.
             </p>
           </div>
         </div>
